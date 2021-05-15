@@ -1,4 +1,4 @@
-const { users } = require("../../data/data");
+const { users, tasks } = require("../../data/data");
 
 const getAll = async () => 
   // TODO: mock implementation. should be replaced during task development
@@ -21,6 +21,12 @@ const put = async (id, user) => {
 const remove = async id => {
   const indexOfUserById = users.findIndex(el => el.id === id);
   users.splice(indexOfUserById, 1);
+  tasks.map(el => {
+    if (el.userId === id) {
+      el.userId = null;
+    }
+    return el;
+  })
   return {};
 };
 

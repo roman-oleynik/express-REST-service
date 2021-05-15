@@ -1,8 +1,6 @@
 const { tasks } = require("../../data/data");
 
-const getAll = async () => 
-  // TODO: mock implementation. should be replaced during task development
-  tasks
+const getAllByBoardId = async (id) => tasks.filter(el => el.boardId === id)
 ;
 const get = id => tasks.find(el => el.id === id);
 
@@ -26,4 +24,4 @@ const remove = async id => {
   return {};
 };
 
-module.exports = { getAll, get, add, put, remove };
+module.exports = { getAllByBoardId, get, add, put, remove };

@@ -1,4 +1,4 @@
-const { boards } = require("../../data/data");
+const { boards, tasks } = require("../../data/data");
 
 const getAll = async () => 
   // TODO: mock implementation. should be replaced during task development
@@ -23,6 +23,13 @@ const remove = async id => {
     throw new Error("Board wasn't found");
   }
   boards.splice(indexOfBoardById, 1);
+  tasks.map(el => {
+    if (el.boardId === id) {
+      el = null;
+    }
+    return el;
+  });
+  console.log(tasks);
   return {};
 };
 module.exports = { getAll, get, add, put, remove };

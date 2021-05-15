@@ -4,8 +4,16 @@ const tasksService = require('./task.service');
 
 // GET
 router.route('/').get(async (req, res) => {
-  const tasks = await tasksService.getAll();
-  res.json(tasks.map(Task.toResponse));
+  const boardId = req.baseUrl.split("/").slice(2,3).join("");
+
+  try {
+    const tasks = await tasksService.getAllByBoardId(boardId);
+    res.json(tasks.map(Task.toResponse));
+  } catch (err) {
+    res.status(404).send({
+      status: 404
+    })
+  }
 });
 
 router.route('/:taskId').get(async (req, res) => {
