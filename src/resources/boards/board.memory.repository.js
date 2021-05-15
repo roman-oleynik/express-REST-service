@@ -1,8 +1,8 @@
-const { users } = require("../../data/data");
+const { boards } = require("../../data/data");
 
 const getAll = async () => 
   // TODO: mock implementation. should be replaced during task development
-   [...users]
+   boards
 ;
 
 module.exports = { getAll };
