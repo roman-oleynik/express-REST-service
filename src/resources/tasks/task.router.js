@@ -49,7 +49,7 @@ router.route('/:taskId').put(async (req, res) => {
 router.route('/:taskId').delete(async (req, res) => {
   const { taskId } = await req.params;
   try {
-    const deletingResult = await tasksService.remove(taskId);
+    const deletingResult = await tasksService.removeTask(taskId);
     res.json(Task.toResponse(deletingResult));
   } catch (error) {
     res.status(404).send({

@@ -15,7 +15,8 @@ const put = async (id, task) => {
   return task;
 };
 
-const remove = async id => {
+
+const removeTask = async id => {
   const indexOfTaskById = tasks.findIndex(el => el.id === id);
   if (indexOfTaskById === -1) {
     throw new Error("Task wasn't found");
@@ -24,4 +25,5 @@ const remove = async id => {
   return {};
 };
 
-module.exports = { getAllByBoardId, get, add, put, remove };
+
+module.exports = { getAllByBoardId, get, add, put, removeTask };
