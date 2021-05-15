@@ -44,12 +44,7 @@ router.route('/:boardId').delete(async (req, res) => {
     res.json(Board.toResponse(deletingResult));
   } catch (error) {
     res.status(404).send({
-<<<<<<< HEAD
-      status: 404,
-      error
-=======
       status: 404
->>>>>>> tasks-board-deletion
     })
   }
 });

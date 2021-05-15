@@ -21,11 +21,7 @@ const put = async (id, user) => {
 const remove = async id => {
   const indexOfUserById = users.findIndex(el => el.id === id);
   users.splice(indexOfUserById, 1);
-<<<<<<< HEAD
-  tasks.map(el => {
-=======
   tasks.forEach(el => {
->>>>>>> tasks-board-deletion
     if (el.userId === id) {
       el.userId = null;
     }
