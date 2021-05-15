@@ -30,3 +30,4 @@ const remove = async id => {
   return {};
 };
 module.exports = { getAll, get, add, put, remove };
+
