@@ -20,7 +20,7 @@ const put = async (id, user) => {
 
 const remove = async id => {
   const indexOfUserById = users.findIndex(el => el.id === id);
-  users[indexOfUserById] = {};
+  users.splice(indexOfUserById, 1);
   return {};
 };
 

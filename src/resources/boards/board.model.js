@@ -1,4 +1,4 @@
-const uuid = require('uuid');
+const uuid = require('uuid').v4;
 
 class Board {
   constructor({
@@ -13,7 +13,7 @@ class Board {
       {
           id: uuid(),
           title: "done",
-          order: "2"
+          order: "1"
       }
     ]
   } = {}) {
