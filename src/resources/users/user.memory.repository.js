@@ -5,4 +5,23 @@ const getAll = async () =>
    [...users]
 ;
 
-module.exports = { getAll };
+const get = id => users.find(el => el.id === id);
+
+const add = async user => {
+  users.push(user);
+  return user;
+};
+
+const put = async (id, user) => {
+  const indexOfUserById = users.findIndex(el => el.id === id);
+  users[indexOfUserById] = user;
+  return user;
+};
+
+const remove = async id => {
+  const indexOfUserById = users.findIndex(el => el.id === id);
+  users[indexOfUserById] = {};
+  return {};
+};
+
+module.exports = { getAll, get, add, put, remove };
